@@ -1,0 +1,126 @@
+<?php
+
+namespace Tipddy\UpvFormBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Tipddy\UpvFormBundle\Entity\Inscripcion
+ *
+ * @ORM\Table(name="inscripcion")
+ * @ORM\Entity
+ */
+class Inscripcion
+{
+    /**
+     * @var bigint $id
+     *
+     * @ORM\Column(name="id", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string $nombre
+     *
+     * @ORM\Column(name="nombre", type="string", length=255, nullable=false)
+     */
+    private $nombre;
+
+    /**
+     * @var string $apellidos
+     *
+     * @ORM\Column(name="apellidos", type="string", length=255, nullable=false)
+     */
+    private $apellidos;
+
+    /**
+     * @var string $rut
+     *
+     * @ORM\Column(name="rut", type="string", length=12, nullable=false)
+     */
+    private $rut;
+
+    /**
+     * @var date $fechaNacimiento
+     *
+     * @ORM\Column(name="fecha_nacimiento", type="date", nullable=false)
+     */
+    private $fechaNacimiento;
+
+    /**
+     * @var string $mailPersonal
+     *
+     * @ORM\Column(name="mail_personal", type="string", length=255, nullable=true)
+     */
+    private $mailPersonal;
+
+    /**
+     * @var string $mailInstitucion
+     *
+     * @ORM\Column(name="mail_institucion", type="string", length=255, nullable=false)
+     */
+    private $mailInstitucion;
+
+    /**
+     * @var string $fonoFijo
+     *
+     * @ORM\Column(name="fono_fijo", type="string", length=50, nullable=true)
+     */
+    private $fonoFijo;
+
+    /**
+     * @var string $fonoMovil
+     *
+     * @ORM\Column(name="fono_movil", type="string", length=50, nullable=true)
+     */
+    private $fonoMovil;
+
+    /**
+     * @var boolean $sede
+     *
+     * @ORM\Column(name="sede", type="boolean", nullable=true)
+     */
+    private $sede;
+
+    /**
+     * @var string $facultad
+     *
+     * @ORM\Column(name="facultad", type="string", length=255, nullable=true)
+     */
+    private $facultad;
+
+    /**
+     * @var string $carrera
+     *
+     * @ORM\Column(name="carrera", type="string", length=255, nullable=true)
+     */
+    private $carrera;
+
+    /**
+     * @var text $tituloProfesional
+     *
+     * @ORM\Column(name="titulo_profesional", type="text", nullable=true)
+     */
+    private $tituloProfesional;
+
+    /**
+     * @var text $gradoAcademico
+     *
+     * @ORM\Column(name="grado_academico", type="text", nullable=true)
+     */
+    private $gradoAcademico;
+
+    /**
+     * @var OpcionSexo
+     *
+     * @ORM\ManyToOne(targetEntity="OpcionSexo")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="sexo", referencedColumnName="id")
+     * })
+     */
+    private $sexo;
+
+
+}

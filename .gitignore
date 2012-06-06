@@ -3,6 +3,7 @@ app/bootstrap.php.cache
 app/bootstrap_cache.php.cache
 
 app/config/parameter.yml
+app/config/parameter.ini
 
 # directorio con todos los archivos de caché
 app/cache/*
@@ -17,6 +18,7 @@ vendor/*
 web/bundles/*
 web/css/*
 web/js/*
+*~.*
 
 # archivos creados por los IDEs Eclipse, Zend Studio, Netbeans, PHPStorm y TextMate
 .buildpath
