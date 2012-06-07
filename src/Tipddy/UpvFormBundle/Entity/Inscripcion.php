@@ -1,8 +1,22 @@
 <?php
 
+/*
+ * (c) Rodrigo Miranda <rmg.contacto@gmail.com>
+ *
+ * This file is part of the UPV Formulario Inscripción sample application.
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * Este archivo pertenece a la aplicación de UPV Formulario Inscripción.
+ * El código fuente de la aplicación incluye un archivo llamado LICENSE
+ * con toda la información sobre el copyright y la licencia.
+ */
+
 namespace Tipddy\UpvFormBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * Tipddy\UpvFormBundle\Entity\Inscripcion
@@ -41,7 +55,8 @@ class Inscripcion
      * @ORM\Column(name="rut", type="string", length=12, nullable=false)
      */
     private $rut;
-
+    
+  
     /**
      * @var date $fechaNacimiento
      *
@@ -123,6 +138,15 @@ class Inscripcion
     private $sexo;
 
 
+    /**
+     * @ORM\Column(name="foto_personal", type="string", length=255, nullable=false)
+     *
+     * @Assert\Image(maxSize="2000K")
+     */
+    private $fotoPersonal;
+    
+
+         
 
     /**
      * Get id
@@ -413,4 +437,42 @@ class Inscripcion
     {
         return $this->sexo;
     }
+
+  
+    /**
+     * Set fotoPersonal
+     *
+     * @param string $fotoPersonal
+     */
+    public function setFotoPersonal($fotoPersonal)
+    {
+        $this->fotoPersonal = $fotoPersonal;
+    }
+
+    /**
+     * Get fotoPersonal
+     *
+     * @return string 
+     */
+    public function getFotoPersonal()
+    {
+        return $this->fotoPersonal;
+    }
+    
+    
+    public function subirFotoPersonal($directorioDestino)
+    {
+	    if (null === $this->fotoPersonal) {
+		    return;
+	    }
+
+	    $nombreArchivoFoto = $this->getRut().'.jpg';
+	    
+	    $this->fotoPersonal->move($directorioDestino, $nombreArchivoFoto);
+	    
+	    $this->setFotoPersonal($nombreArchivoFoto);
+	    
+    }
+    
+    
 }

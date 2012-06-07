@@ -1,0 +1,81 @@
+<h1>Inscripcion</h1>
+
+<table class="record_properties">
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+            <th>Nombre</th>
+            <td>{{ entity.nombre }}</td>
+        </tr>
+        <tr>
+            <th>Apellidos</th>
+            <td>{{ entity.apellidos }}</td>
+        </tr>
+        <tr>
+            <th>Rut</th>
+            <td>{{ entity.rut }}</td>
+        </tr>
+        <tr>
+            <th>Fechanacimiento</th>
+            <td>{{ entity.fechaNacimiento|date('Y-m-d H:i:s') }}</td>
+        </tr>
+        <tr>
+            <th>Mailpersonal</th>
+            <td>{{ entity.mailPersonal }}</td>
+        </tr>
+        <tr>
+            <th>Mailinstitucion</th>
+            <td>{{ entity.mailInstitucion }}</td>
+        </tr>
+        <tr>
+            <th>Fonofijo</th>
+            <td>{{ entity.fonoFijo }}</td>
+        </tr>
+        <tr>
+            <th>Fonomovil</th>
+            <td>{{ entity.fonoMovil }}</td>
+        </tr>
+        <tr>
+            <th>Sede</th>
+            <td>{{ entity.sede }}</td>
+        </tr>
+        <tr>
+            <th>Facultad</th>
+            <td>{{ entity.facultad }}</td>
+        </tr>
+        <tr>
+            <th>Carrera</th>
+            <td>{{ entity.carrera }}</td>
+        </tr>
+        <tr>
+            <th>Tituloprofesional</th>
+            <td>{{ entity.tituloProfesional }}</td>
+        </tr>
+        <tr>
+            <th>Gradoacademico</th>
+            <td>{{ entity.gradoAcademico }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('inscripcion') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('inscripcion_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('inscripcion_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+</ul>

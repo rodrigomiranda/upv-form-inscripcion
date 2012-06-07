@@ -1,3 +1,3 @@
-TipddyUpvFormBundle_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: TipddyUpvFormBundle:Default:index }
+TipddyUpvFormBundle_inscripcion:
+    resource: "@TipddyUpvFormBundle/Resources/config/routing/inscripcion.yml"
+    prefix: /inscripcion

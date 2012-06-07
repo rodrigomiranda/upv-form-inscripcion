@@ -1,0 +1,2 @@
+parameters:
+    tipddy.upvform.imagenes: %kernel.root_dir%/../web/uploads/images/

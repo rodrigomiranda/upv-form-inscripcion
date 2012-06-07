@@ -15,7 +15,7 @@ class OpcionSexo
     /**
      * @var boolean $id
      *
-     * @ORM\Column(name="id", type="boolean", nullable=false)
+     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -29,6 +29,12 @@ class OpcionSexo
     private $etiqueta;
 
 
+
+
+    public function __toString()
+    {
+	    return $this->getEtiqueta();
+    }
 
     /**
      * Get id

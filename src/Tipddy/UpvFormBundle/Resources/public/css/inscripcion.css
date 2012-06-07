@@ -1,0 +1,190 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.contenedor{
+	margin: 0 auto; 
+    top: 20px;
+    width: 838px;
+	height:550px;
+}
+
+span {
+	display: block;
+	margin-left: 15px;
+	
+}
+
+
+#imagen{
+	position:relative;
+	-moz-box-shadow:0 4px 6px #454545;
+	background-color:#ffffff;
+	margin-right:17px;
+	float:left;
+	width:510px;
+	height:500px;
+	z-index:1;
+}
+#formulario{
+	position:relative;
+	float:left;
+	width:300px;
+	height:500px;
+	
+	background: -moz-linear-gradient(center top , #FFFFFF 0pt, #DDDDDD 100%) repeat scroll 0 0 transparent;
+  border-bottom: 1px solid #CCCCCC;
+  border-left: 1px solid #EEEEEE;
+  border-right: 1px solid #EEEEEE;
+  -moz-box-shadow:0 4px 6px #454545;
+}
+
+
+
+
+#formulario h2 {
+	border-bottom: 1px solid #E2E2E2;
+  box-shadow: 0 1px 0 #FFFFFF;
+  color: #777777;
+  display: block;
+  font-size: 16px;
+  font-weight: 300;
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  position: relative;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.box {
+	position:relative;
+	margin-bottom:3px;
+	left:15px;
+	width:280px;
+	height:25px;
+	
+}
+.box_boton{
+	position:relative;
+	margin-top:12px;
+	margin-bottom:8px;
+	left:15px;
+	width:280px;
+	height:25px;
+	
+}
+
+.clearfloat { 
+   clear:both;
+   height:0;
+   font-size: 1px;
+   line-height: 0px;
+}
+
+front-signup h2{position:relative;display:block;padding:10px 12px;margin-bottom:12px;font-size:16px;font-weight:300;color:#777;border-bottom:1px solid #E2E2E2;-webkit-box-shadow:0 1px 0 #fff;-moz-box-shadow:0 1px 0 #fff;box-shadow:0 1px 0 #fff;-webkit-text-shadow:0 1px 0 rgba(255,255,255,.6);-moz-text-shadow:0 1px 0 rgba(255,255,255,.6);text-shadow:0 1px 0 rgba(255,255,255,.6);}
+
+
+.front-signin, .front-signup {
+  background: -moz-linear-gradient(center top , #FFFFFF 0pt, #DDDDDD 100%) repeat scroll 0 0 transparent;
+  border-bottom: 1px solid #CCCCCC;
+  border-left: 1px solid #EEEEEE;
+  border-right: 1px solid #EEEEEE;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+input  {
+  -moz-transition: opacity 0.1s ease 0s, font-size 0.1s ease 0s;
+  -moz-user-select: none;
+  background:#ffffff;
+  
+    border: 1px solid #CCCCCC;
+  bottom: 1px;
+  color: #999999;
+  cursor: text;
+  font-size: 13px;
+  height: 15px;
+  left: 2px;
+  line-height: 10px;
+  padding: 4px;
+  position: absolute;
+  right: 1px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  top: 1px;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.front-signup .signup {
+  margin: 0;
+  padding: 0;
+}
+
+
+.signin, .signup, .resend-password, .mobile-complete {
+  border-radius: 5px 5px 5px 5px;
+}
+
+.front-welcome, .front-signin, .front-signup {
+  border-radius: 4px 4px 4px 4px;
+}
+
+.front-signup .btn {
+  bottom: 12px;
+  box-shadow: 0 1px 0 #FFFFFF;
+  height: 30px;
+  margin: 0;
+  padding-left: 12px;
+  padding-right: 12px;
+  position: absolute;
+  right: 12px;
+}
+
+
+.signup-btn {
+  background-color: #FD9A0F;
+  background-image: -moz-linear-gradient(center top , #FEE94F 0pt, #FD9A0F 100%);
+  background-repeat: repeat-x;
+  border-color: #FFAA22;
+}
+
+.btn {
+  
+}
+
+.btn {
+  border-radius: 4px 4px 4px 4px;
+  color: #333333;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 18px;
+  overflow: visible;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+
+body {
+  background-color: #AA0030;
+}
+
+
+
+label, input, textarea, select, button {
+  font-family: "Helvetica Neue",Arial,sans-serif;
+  background-color: #ffffff;
+}
+
+.front-page.front-random-image-iphone-concert {
+  background-color: #AA0030;
+}
+
+.front-signup {
+  height: 206px;
+  left: 536px;
+  position: absolute;
+  top: 121px;
+  width: 300px;
+}
+
+.front-welcome, .front-signin, .front-signup {
+  border-radius: 4px 4px 4px 4px;
+}
