@@ -1,3 +1,18 @@
+{% extends '::base.html.twig' %}
 {% block stylesheets %}
  <link href="{{ asset('bundles/tipddyupvform/css/inscripcion.css') }}" rel="stylesheet" type="text/css" />   
+{% endblock %}
+
+{% block body %}
+<div class="contenedor">
+  <div id="imagen">
+    <img src="{{ asset('bundles/tipddyupvform/images/bienvenida.jpg') }}" width="510" height="643" />
+  </div>
+  <div id="formulario">
+     {% block contentform %} {% endblock %}
+     <br class="clearfloat" />
+  </div>
+      <br class="clearfloat" />
+</div>
+  
 {% endblock %}

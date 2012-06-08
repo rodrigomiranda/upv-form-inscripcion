@@ -79,6 +79,9 @@ class InscripcionController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getEntityManager();
+            
+            $entity->subirFotoPersonal($this->container->getParameter('tipddy.upvform.imagenes'));
+            
             $em->persist($entity);
             $em->flush();
 

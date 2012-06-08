@@ -39,6 +39,8 @@ class Inscripcion
      * @var string $nombre
      *
      * @ORM\Column(name="nombre", type="string", length=255, nullable=false)
+     * 
+     * @Assert\NotBlank()
      */
     private $nombre;
 
@@ -46,6 +48,8 @@ class Inscripcion
      * @var string $apellidos
      *
      * @ORM\Column(name="apellidos", type="string", length=255, nullable=false)
+     *
+     * @Assert\NotBlank()
      */
     private $apellidos;
 
@@ -53,6 +57,8 @@ class Inscripcion
      * @var string $rut
      *
      * @ORM\Column(name="rut", type="string", length=12, nullable=false)
+     *
+     * @Assert\NotBlank()
      */
     private $rut;
     
@@ -60,7 +66,9 @@ class Inscripcion
     /**
      * @var date $fechaNacimiento
      *
-     * @ORM\Column(name="fecha_nacimiento", type="date", nullable=false)
+     * @ORM\Column(name="fecha_nacimiento", type="datetime", nullable=false)
+     *
+     * @Assert\DateTime() 
      */
     private $fechaNacimiento;
 
@@ -68,6 +76,8 @@ class Inscripcion
      * @var string $mailPersonal
      *
      * @ORM\Column(name="mail_personal", type="string", length=255, nullable=true)
+     *
+     * @Assert\Email()
      */
     private $mailPersonal;
 
@@ -75,6 +85,9 @@ class Inscripcion
      * @var string $mailInstitucion
      *
      * @ORM\Column(name="mail_institucion", type="string", length=255, nullable=false)
+     *
+     * @Assert\Email()
+     * @Assert\NotBlank()
      */
     private $mailInstitucion;
 
@@ -93,10 +106,12 @@ class Inscripcion
     private $fonoMovil;
 
     /**
-     * @var boolean $sede
-     *
-     * @ORM\Column(name="sede", type="boolean", nullable=true)
-     */
+     * 
+     * @ORM\ManyToOne(targetEntity="OpcionSede")
+     * @ORM\JoinColumns({
+     * @ORM\JoinColumn(name="sede", referencedColumnName="id")
+     * })
+     */     
     private $sede;
 
     /**
@@ -116,14 +131,14 @@ class Inscripcion
     /**
      * @var text $tituloProfesional
      *
-     * @ORM\Column(name="titulo_profesional", type="text", nullable=true)
+     * @ORM\Column(name="titulo_profesional", type="string", nullable=true)
      */
     private $tituloProfesional;
 
     /**
      * @var text $gradoAcademico
      *
-     * @ORM\Column(name="grado_academico", type="text", nullable=true)
+     * @ORM\Column(name="grado_academico", type="string", nullable=true)
      */
     private $gradoAcademico;
 
@@ -141,7 +156,7 @@ class Inscripcion
     /**
      * @ORM\Column(name="foto_personal", type="string", length=255, nullable=false)
      *
-     * @Assert\Image(maxSize="2000K")
+     * @Assert\Image()
      */
     private $fotoPersonal;
     

@@ -1,16 +1,30 @@
-<h1>Inscripcion creation</h1>
+{% extends 'TipddyUpvFormBundle::layout.html.twig' %}
 
-<form action="{{ path('inscripcion_create') }}" method="post" {{ form_enctype(form) }}>
-    {{ form_widget(form) }}
-    <p>
-        <button type="submit">Create</button>
-    </p>
+{% block contentform %}
+<h2>Regístrate en el diplomado</h2>
+
+<form action="{{ path('inscripcion_create') }}" method="post" {{ form_enctype(form) }} novalidate="novalidate">
+  
+    {{ form_row(form.nombre, { 'attr' : { 'placeholder' :'Nombre'}} ) }}
+    {{ form_row(form.apellidos, { 'attr' : { 'placeholder' :'Apellidos'}} ) }}
+    {{ form_row(form.rut, { 'attr' : { 'placeholder' :'Rut'}} ) }}
+    {{ form_row(form.fechaNacimiento, { 'attr' : { 'placeholder' :'Fecha nacimiento'}, 'label' : 'Fecha nacimiento'} ) }}  
+    {{ form_row(form.mailPersonal, { 'attr' : { 'placeholder' :'Email personal'}, 'label' : 'Email personal'} ) }}        
+    {{ form_row(form.mailInstitucion, { 'attr' : { 'placeholder' :'Email institución'}, 'label' : 'Email institución'} ) }}      
+    {{ form_row(form.fonoFijo, { 'attr' : { 'placeholder' :'Teléfono fijo'}, 'label' : 'Fono fijo' } ) }}
+    {{ form_row(form.fonoMovil, { 'attr' : { 'placeholder' :'Teléfono móvil'}, 'label' : 'Fono móvil'} ) }}   
+    {{ form_row(form.sede, { 'attr' : { 'placeholder' :'Sede'}} ) }}           
+    {{ form_row(form.facultad, { 'attr' : { 'placeholder' :'Facultad'}} ) }}  
+    {{ form_row(form.carrera, { 'attr' : { 'placeholder' :'Carrera'}} ) }}  
+    {{ form_row(form.tituloProfesional, { 'attr' : { 'placeholder' :'Título profesional'}, 'label' : 'Título profesional' } ) }}     
+    {{ form_row(form.gradoAcademico, { 'attr' : { 'placeholder' :'Grado académico'}, 'label' : 'Grado académico'} ) }}        
+    {{ form_row(form.sexo, { 'attr' : { 'placeholder' :'Sexo'}} ) }}          
+    {{ form_row(form.fotoPersonal, { 'attr' : { 'placeholder' :'foto Personal', 'size' : 7}, 'label' : 'Foto personal'} ) }}                                      
+    
+    
+    {{ form_widget(form) }} 
+
+<button class="btn signup-btn" type="submit">Regístrate</button>
 </form>
 
-<ul class="record_actions">
-    <li>
-        <a href="{{ path('inscripcion') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+{% endblock %}

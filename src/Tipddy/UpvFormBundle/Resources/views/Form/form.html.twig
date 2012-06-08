@@ -1,0 +1,35 @@
+{% extends 'form_div_layout.html.twig' %}
+
+
+{% block field_row %}
+<div class="box {{ errors|length > 0 ? 'box-error' : 'box-ok' }}">
+    <div class="box-label">{{form_label(form,label|default(null))}}</div>
+    <div class="box-field"> {{form_widget(form, { 'attr' : attr})}}</div>   
+      {% if errors|length > 0 %}        
+         <span class="invalid-error">{{form_errors(form)}}</span>
+      {% endif %}
+      
+  </div>
+{% endblock %}
+
+{% block generic_label %}
+{% spaceless %}
+    {% if required %}
+        {% set attr = attr|merge({'class': attr.class|default('') ~ ' required'}) %}
+    {% endif %}
+    <label{% for attrname,attrvalue in attr %} {{attrname}}="{{attrvalue}}"{% endfor %}>{{ label|trans }}{{ required ? ' *' : ''}}</label>
+{% endspaceless %}
+{% endblock %}
+
+
+{% block field_errors %}
+{% spaceless %}
+    {% if errors|length > 0 %}
+    <ul class="error_list">
+        {% for error in errors %}
+            <li>{{ error.messageTemplate|trans(error.messageParameters, 'validators') }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+{% endspaceless %}
+{% endblock field_errors %}

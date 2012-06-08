@@ -13,7 +13,7 @@ class InscripcionType extends AbstractType
             ->add('nombre')
             ->add('apellidos')
             ->add('rut')
-            ->add('fechaNacimiento')
+            ->add('fechaNacimiento', 'birthday')
             ->add('mailPersonal')
             ->add('mailInstitucion')
             ->add('fonoFijo')
@@ -24,7 +24,7 @@ class InscripcionType extends AbstractType
             ->add('tituloProfesional')
             ->add('gradoAcademico')
             ->add('sexo')
-            ->add('fotoPersonal', 'file')
+            ->add('fotoPersonal', 'file', array('required' => true))
          ;
     }
 

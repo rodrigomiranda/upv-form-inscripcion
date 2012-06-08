@@ -8,12 +8,6 @@
 	height:550px;
 }
 
-span {
-	display: block;
-	margin-left: 15px;
-	
-}
-
 
 #imagen{
 	position:relative;
@@ -25,24 +19,26 @@ span {
 	height:500px;
 	z-index:1;
 }
+
+
 #formulario{
 	position:relative;
 	float:left;
 	width:300px;
-	height:500px;
-	
 	background: -moz-linear-gradient(center top , #FFFFFF 0pt, #DDDDDD 100%) repeat scroll 0 0 transparent;
-  border-bottom: 1px solid #CCCCCC;
-  border-left: 1px solid #EEEEEE;
-  border-right: 1px solid #EEEEEE;
-  -moz-box-shadow:0 4px 6px #454545;
+    border-bottom: 1px solid #CCCCCC;
+    border-left: 1px solid #EEEEEE;
+    border-right: 1px solid #EEEEEE;
+    -moz-box-shadow:0 4px 6px #454545;
+    height: 643px;
 }
 
-
-
+form {
+	padding-bottom: 10px;
+}
 
 #formulario h2 {
-	border-bottom: 1px solid #E2E2E2;
+  border-bottom: 1px solid #E2E2E2;
   box-shadow: 0 1px 0 #FFFFFF;
   color: #777777;
   display: block;
@@ -54,14 +50,65 @@ span {
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 
+/*
 .box {
 	position:relative;
 	margin-bottom:3px;
 	left:15px;
 	width:280px;
-	height:25px;
+	height:30px;
+	
+}*/
+
+.box {
+	display: block;
+	margin: 6px auto;
+	width: 276px;
+	overflow: visible;
+	position: relative;
+}
+
+.box-error {
+	height: 40px;	
+}
+
+.box-ok {
+	height: 30px;
+}
+
+
+.box-label, .box-field {
+	display: inline;
+	float: left;
 	
 }
+
+.box-label {
+	width: 41%;
+}
+
+
+.invalid-error {
+    background: none repeat scroll 0 0 #FBE3E4;
+    color: #D12F19;
+    display: block;
+    padding: 14px 5px;
+    font-size: 12px;
+    padding: 14px 5px 0 4px;
+}
+
+
+.box-field {
+	width: 59%;
+}
+
+.box-label label {
+	font-family: "Helvetica Neue",Arial,sans-serif;
+	font-size: 13px;
+	color: #5a5858;
+	
+}
+
 .box_boton{
 	position:relative;
 	margin-top:12px;
@@ -91,25 +138,21 @@ front-signup h2{position:relative;display:block;padding:10px 12px;margin-bottom:
 }
 
 input  {
-  -moz-transition: opacity 0.1s ease 0s, font-size 0.1s ease 0s;
-  -moz-user-select: none;
-  background:#ffffff;
-  
-    border: 1px solid #CCCCCC;
-  bottom: 1px;
-  color: #999999;
-  cursor: text;
-  font-size: 13px;
-  height: 15px;
-  left: 2px;
-  line-height: 10px;
-  padding: 4px;
+  width: 150px;
+  border: 1px solid #CCCCCC;
+  box-shadow: 0 1px 0 #EEEEEE inset, 0 1px 0 #FFFFFF;
   position: absolute;
-  right: 1px;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-  top: 1px;
-  white-space: nowrap;
-  z-index: 1;
+  top: 0;
+  background: #FFFFFF;
+  border-radius: 3px 3px 3px 3px;
+  display: inline-block;
+  margin: 0;
+  outline: medium none;
+  padding: 4px;
+  font-size: 13px;
+  line-height: 20px;
+  
+  
 }
 
 .front-signup .signup {
@@ -146,10 +189,6 @@ input  {
 }
 
 .btn {
-  
-}
-
-.btn {
   border-radius: 4px 4px 4px 4px;
   color: #333333;
   cursor: pointer;
@@ -159,18 +198,26 @@ input  {
   line-height: 18px;
   overflow: visible;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  margin-top: 10px;
+  margin-left: 5px;
+  
 }
 
 
 body {
   background-color: #AA0030;
+  
 }
 
 
 
 label, input, textarea, select, button {
   font-family: "Helvetica Neue",Arial,sans-serif;
-  background-color: #ffffff;
+ /* background-color: #ffffff; */
+}
+
+input[type="file"] {
+   width: 10px;	
 }
 
 .front-page.front-random-image-iphone-concert {
