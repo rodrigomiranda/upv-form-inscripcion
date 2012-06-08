@@ -30,11 +30,12 @@
     border-left: 1px solid #EEEEEE;
     border-right: 1px solid #EEEEEE;
     -moz-box-shadow:0 4px 6px #454545;
-    height: 643px;
+    height: auto;
 }
 
 form {
-	padding-bottom: 10px;
+	height: 100%;
+	margin-bottom: 4px;
 }
 
 #formulario h2 {
