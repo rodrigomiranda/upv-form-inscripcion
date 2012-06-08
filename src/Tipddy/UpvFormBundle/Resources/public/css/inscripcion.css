@@ -8,6 +8,37 @@
 	height:550px;
 }
 
+#contenedor_m{
+	margin: 0 auto; 
+	background:url("../images/fondo_img.jpg") no-repeat left top;
+	  -moz-box-shadow:0 4px 6px #454545;
+    top: 20px;
+    width: 728px;
+	height:512px;
+}
+
+#mensaje {
+	position:relative;
+	left:110px;
+	top:440px;
+	width:510px;
+	height:70px;
+	z-index:1;
+}
+
+#mensaje p{
+	font-size:18px;
+	text-align:center;
+	font-family: Arial,Helvetica,sans-serif;
+	color:#ffffff;
+	font-weight: bold;
+	margin:0;
+	padding:0;
+
+}
+
+
+
 
 #imagen{
 	position:relative;

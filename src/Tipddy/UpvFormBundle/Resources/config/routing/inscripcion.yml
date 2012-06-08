@@ -1,14 +1,11 @@
-inscripcion:
+inscripcion_new:
     pattern:  /
-    defaults: { _controller: "TipddyUpvFormBundle:Inscripcion:index" }
+    defaults: { _controller: "TipddyUpvFormBundle:Inscripcion:new" }
 
 inscripcion_show:
     pattern:  /{id}/show
     defaults: { _controller: "TipddyUpvFormBundle:Inscripcion:show" }
 
-inscripcion_new:
-    pattern:  /new
-    defaults: { _controller: "TipddyUpvFormBundle:Inscripcion:new" }
 
 inscripcion_create:
     pattern:  /create

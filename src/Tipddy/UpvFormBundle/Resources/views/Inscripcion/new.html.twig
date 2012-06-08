@@ -1,7 +1,12 @@
 {% extends 'TipddyUpvFormBundle::layout.html.twig' %}
 
-{% block contentform %}
-<h2>Regístrate en el diplomado</h2>
+{% block body %}
+<div class="contenedor">
+  <div id="imagen">
+    <img src="{{ asset('bundles/tipddyupvform/images/bienvenida.jpg') }}" width="510" height="643" />
+  </div>
+  <div id="formulario">
+     <h2>Regístrate en el diplomado</h2>
 
 <form action="{{ path('inscripcion_create') }}" method="post" {{ form_enctype(form) }} novalidate="novalidate">
   
@@ -27,4 +32,7 @@
 <button class="btn signup-btn" type="submit">Regístrate</button>
 </form>
 
+  </div>
+
+</div>
 {% endblock %}

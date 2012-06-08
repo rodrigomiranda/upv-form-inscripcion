@@ -157,6 +157,7 @@ class Inscripcion
      * @ORM\Column(name="foto_personal", type="string", length=255, nullable=false)
      *
      * @Assert\Image()
+     * @Assert\NotBlank()
      */
     private $fotoPersonal;
     
