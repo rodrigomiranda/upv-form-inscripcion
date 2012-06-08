@@ -17,12 +17,18 @@ namespace Tipddy\UpvFormBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
+use Symfony\Bridge\Doctrine\Validator\Constraints as DoctrineAssert;
+use Symfony\Component\Validator\ExecutionContext;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+
 
 /**
  * Tipddy\UpvFormBundle\Entity\Inscripcion
  *
  * @ORM\Table(name="inscripcion")
  * @ORM\Entity
+ * @DoctrineAssert\UniqueEntity(fields="rut", message="rut already exists")
+ * @Assert\Callback(methods={"esRutValido"})
  */
 class Inscripcion
 {
@@ -56,7 +62,7 @@ class Inscripcion
     /**
      * @var string $rut
      *
-     * @ORM\Column(name="rut", type="string", length=12, nullable=false)
+     * @ORM\Column(name="rut", type="string", length=12, nullable=false, unique=true)
      *
      * @Assert\NotBlank()
      */
@@ -487,6 +493,54 @@ class Inscripcion
 	    $this->fotoPersonal->move($directorioDestino, $nombreArchivoFoto);
 	    
 	    $this->setFotoPersonal($nombreArchivoFoto);
+	    
+    }
+    
+    public function esRutValido(ExecutionContext $context)
+    {
+          
+        $propertyPath = $context->getPropertyPath() . '.rut';
+        
+        $rut = $this->getRut();
+        
+        /* validando rut */
+        $r = strtoupper(str_replace(array(".", "-"), "", $rut));
+        $sub_rut = substr($r, 0, strlen($r) - 1);
+        $sub_dv = substr($r,  - 1);
+        $x = 2;
+        $s = 0;
+    
+        for ($i = strlen($sub_rut) - 1;$i >= 0;$i--)
+        {
+          if ($x > 7)
+          {
+            $x = 2;
+          }
+          $s += $sub_rut[$i] * $x;
+          $x++;
+        }
+        
+        $dv = 11 - ($s % 11);
+       
+        if ($dv == 10)
+        {
+          $dv = 'K';
+        }
+        
+        if ($dv == 11)
+        {
+           $dv = '0';
+        }
+        
+    
+       if ($dv != $sub_dv)
+       {
+          
+          $context->setPropertyPath($propertyPath); 
+  		  $context->addViolation('rut invalid', array(), null);
+	
+	    }
+	    
 	    
     }
     

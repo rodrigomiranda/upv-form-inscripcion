@@ -174,6 +174,14 @@
                 <source>This value is already used</source>
                 <target>Este usuario está siendo utilizado por otra persona</target>
             </trans-unit>
+            <trans-unit id="44">
+                <source>rut invalid</source>
+                <target>El rut no es válido</target>
+            </trans-unit>
+            <trans-unit id="45">
+                <source>rut already exists</source>
+                <target>El rut ya está registrado</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

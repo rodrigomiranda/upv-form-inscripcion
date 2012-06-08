@@ -7,6 +7,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Tipddy\UpvFormBundle\Entity\Inscripcion;
 use Tipddy\UpvFormBundle\Form\InscripcionType;
 
+use Tipddy\UpvFormBundle\Util\Util;
+
 /**
  * Inscripcion controller.
  *
@@ -78,8 +80,10 @@ class InscripcionController extends Controller
         $form->bindRequest($request);
 
         if ($form->isValid()) {
+            $inscripcion = $form->getData();
             $em = $this->getDoctrine()->getEntityManager();
             
+            $entity->setRut(Util::cleanRut($inscripcion->getRut()));
             $entity->subirFotoPersonal($this->container->getParameter('tipddy.upvform.imagenes'));
             
             $em->persist($entity);
