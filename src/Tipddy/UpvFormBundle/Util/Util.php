@@ -12,7 +12,7 @@ class Util
 	       $rut_part1 = substr($rut, 0, $tam_rut - 1);
 	       $rut_part2 = $rut[$tam_rut -1];
 	       
-	       $return $rut_part1."-".$rut_part2;
+	       return $rut_part1."-".$rut_part2;
 	   
    }
 
